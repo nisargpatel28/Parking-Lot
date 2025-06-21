@@ -1,0 +1,6 @@
+id=>024597a7-c4b8-413a-b95e-447b93409682<=
+objParkingSpot=>1<=
+parking_lot_id=>a1891a25-d7bd-4083-b018-8f235facaf60<=
+id=>024597a7-c4b8-413a-b95e-447b93409682<=
+objParkingSpot=>1<=
+parking_lot_id=>a1891a25-d7bd-4083-b018-8f235facaf60<=

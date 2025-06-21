@@ -1,0 +1,3 @@
+src/supervisord.pid
+src/myapp/vendor
+.idea

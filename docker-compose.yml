@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  my-app:
+    container_name: my-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: ${DOCKER_PLATFORM:-linux/amd64}
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8081:80"
+    depends_on:
+      - my-db
+      - my-cache
+    volumes:
+      - ./src/myapp:/var/www/html
+
+  my-db:
+    container_name: my-db
+    image: "kartoza/postgis:${POSTGRES_VERSION:-14}"
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "5430:5432"
+    environment:
+      - POSTGRES_DB=myapp
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - "myappdb:/var/lib/postgresql/${POSTGRES_VERSION:-14}"
+
+  my-cache:
+    container_name: my-cache
+    image: "redis:alpine"
+    command: redis-server
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "6378:6379"
+
+volumes:
+  myappdb:
