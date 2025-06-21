@@ -9,6 +9,8 @@ Confronted with the ongoing challenge of locating parking spaces within our park
 4. Run `php artisan db:seed`
 5. Load in browser http://localhost:8081
 
+## Used - Laravel with Connection - driver mysql.
+
 ## API Endpoints
 Below are the proposed endpoints related to requriements.
 
